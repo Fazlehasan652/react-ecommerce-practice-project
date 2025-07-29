@@ -7,7 +7,7 @@ const Profile = () => {
     <div className="">
       <section className="flex justify-center items-center min-h-screen bg-gradient-to-br from-purple-900 via-indigo-800 to-blue-900 p-4 ">
         {/* <!-- Profile Card Container --> */}
-        <div className="max-w-md w-full bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl transform hover:scale-[1.02] transition-transform duration-500 ease-in-out p-8 relative overflow-hidden border border-white/20">
+        <div className="max-w-xl w-full bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl transform hover:scale-[1.02] transition-transform duration-500 ease-in-out p-8 relative overflow-hidden border border-white/20">
           {/* <!-- Decorative Elements --> */}
           <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
           <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
@@ -99,7 +99,7 @@ const Profile = () => {
             {/* <!-- Dribbble --> */}
             <a
               href="#"
-              class="p-3 rounded-full bg-white/5 backdrop-blur-sm shadow-lg hover:bg-pink-500/30 transition-all duration-300 group"
+              className="p-3 rounded-full bg-white/5 backdrop-blur-sm shadow-lg hover:bg-pink-500/30 transition-all duration-300 group"
             >
               <svg
                 className="w-6 h-6 text-white/80 group-hover:text-pink-300 group-hover:scale-110 transition-all duration-300"
