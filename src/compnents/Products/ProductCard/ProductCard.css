@@ -1,0 +1,26 @@
+.card {
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  padding: var(--padding);
+}
+.card:hover {
+  box-shadow: 0.1rem 0.2rem 0.8rem rgba(205, 202, 202, 1);
+}
+.hr-design {
+  margin: 0.5rem 0;
+}
+.dot {
+  height: 1.8rem;
+  width: 2rem;
+  display: inline-block;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+.black {
+  background-color: black;
+}
