@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 import "./SignupForm.css";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../../firebase";
@@ -14,7 +14,7 @@ const SignupForm = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-
+  
   const navigate = useNavigate();
   const handleChange = async (e) => {
     // console.log(e.target.value);
@@ -29,6 +29,7 @@ const SignupForm = () => {
     try {
       await createUserWithEmailAndPassword(auth, user.email, user.password);
       await setDoc(doc(db, "users", auth.user.uid), {
+
         name: user.name,
         email: user.email,
         tel: Number(user.tel),

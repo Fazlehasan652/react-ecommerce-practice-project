@@ -1,6 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ProductAddForm.css";
+import { useNavigate } from "react-router";
+import { useGetAllProductsQuery } from "../../../features/api/apiSlice";
+
 const ProductAddForm = () => {
+  const initialization = {
+    category: "",
+    title: "",
+    description: "",
+    price: "",
+    stock: "",
+    sold: "",
+    review: "",
+    like: "",
+    love: "",
+    yelp: "",
+    image: ""
+  }
+  const [products, setProduct] = useState()
+  const navigate = useNavigate()
+   const {data: productss} =useGetAllProductsQuery()
+   console.log(productss)
+   
+
+  
+  
   const product = "";
   const submitHandler = () => {};
   const handleChange = () => {};
