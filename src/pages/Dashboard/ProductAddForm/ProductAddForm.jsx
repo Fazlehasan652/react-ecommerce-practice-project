@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProductAddForm.css"
+import "./ProductAddForm.css";
 const ProductAddForm = () => {
   const product = "";
   const submitHandler = () => {};
@@ -88,6 +88,121 @@ const ProductAddForm = () => {
                     placeholder="Price"
                     onChange={handleChange}
                   />
+                </div>
+
+                {/* Store Sold  */}
+                <div className="flex justify-around items-center gap-1">
+                  <div className="mb-6">
+                    <label
+                      className="block text-gray-800 font-bold mb-2"
+                      htmlFor="email"
+                    >
+                      Stock
+                    </label>
+                    <input
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="email"
+                      type="number"
+                      value={product.price}
+                      name="price"
+                      required
+                      placeholder="Price"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="mb-6">
+                    <label
+                      className="block text-gray-800 font-bold mb-2"
+                      htmlFor="email"
+                    >
+                      Sold
+                    </label>
+                    <input
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="email"
+                      type="number"
+                      value={product.price}
+                      name="price"
+                      required
+                      placeholder="Price"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="mb-6">
+                    <label
+                      className="block text-gray-800 font-bold mb-2"
+                      htmlFor="email"
+                    >
+                      Reviews
+                    </label>
+                    <input
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="email"
+                      type="number"
+                      value={product.price}
+                      name="price"
+                      required
+                      placeholder="Price"
+                      onChange={handleChange}
+                    />
+                  </div>
+                </div>
+                {/* Like Love yelp  */}
+                <div className="flex justify-around items-center gap-1">
+                  <div className="mb-6">
+                    <label
+                      className="block text-gray-800 font-bold mb-2"
+                      htmlFor="email"
+                    >
+                      Like
+                    </label>
+                    <input
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="email"
+                      type="number"
+                      value={product.price}
+                      name="price"
+                      required
+                      placeholder="Price"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="mb-6">
+                    <label
+                      className="block text-gray-800 font-bold mb-2"
+                      htmlFor="email"
+                    >
+                      Love 
+                    </label>
+                    <input
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="email"
+                      type="number"
+                      value={product.price}
+                      name="price"
+                      required
+                      placeholder="Price"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="mb-6">
+                    <label
+                      className="block text-gray-800 font-bold mb-2"
+                      htmlFor="email"
+                    >
+                      Yelp
+                    </label>
+                    <input
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="email"
+                      type="number"
+                      value={product.price}
+                      name="price"
+                      required
+                      placeholder="Price"
+                      onChange={handleChange}
+                    />
+                  </div>
                 </div>
 
                 <div className="mb-6">

@@ -12,7 +12,50 @@ const ProductDetails = () => {
         <div className="main-content">
           <section className="product-details flex-center">
             <div className="product__details-left flex-center">
-              <img key={product.id + 10} src={imges} alt="Headphone" />
+              <div className="flex flex-col gap-y-1.5 bg-gray-100/50 p-2">
+                <img key={product.id + 10} src={imges} alt="Headphone" />
+              <div className="flex justify-between items-center">
+                <div className="flex justify-center items-center gap-2">
+                  {/* Like  */}
+                  <div className="flex justify-center items-center gap-1.5">
+                    <span>
+                      <i class="bi bi-hand-thumbs-up"></i>
+                      {/* <i className="bi bi-hand-thumbs-up-fill"></i> */}
+                    </span>
+                    <small>2.2k</small>
+                  </div>
+                  {/* Love  */}
+                  <div className="flex justify-center items-center gap-1.5">
+                    <span>
+                      {/* <i class="bi bi-heart-fill"></i> */}
+                      <i className="bi bi-heart"></i>
+                    </span>
+                    <small>2.2k</small>
+                  </div>
+                  {/* yelp  */}
+                  <div className="flex justify-center items-center gap-1.5">
+                    <span>
+                      {/* <i className="bi bi-yelp text-red-600"></i> */}
+                      <i className="bi bi-yelp text-green-500"></i>
+                    </span>
+                    <small>2.2k</small>
+                  </div>
+                </div>
+                <div className="flex justify-center items-center gap-1.5">
+                  <div>
+                    <i className="bi bi-star"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                    <i className="bi bi-star-fill"></i>
+                  </div>
+                  <div>
+                    <small>136</small> <small>reviews</small>
+                  </div>
+                </div>
+              </div>
+              </div>
+              
             </div>
             <div className="product__details-right">
               <h3 key={product.id + 6} className="product__name">

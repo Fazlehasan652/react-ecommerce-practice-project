@@ -1,15 +1,56 @@
-import React from 'react';
-import "./SignupForm.css"
-
+import React, { use, useState } from "react";
+import "./SignupForm.css";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "../../../firebase";
+import { doc, setDoc } from "firebase/firestore";
+import { useNavigate } from "react-router";
 const SignupForm = () => {
-     const submitHandler = async (e) => {
-        
-     }
-     const handleChange = async (e) => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    tel: "",
+    password: "",
+  });
 
-     }
-    return (
-        <>
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const navigate = useNavigate();
+  const handleChange = async (e) => {
+    // console.log(e.target.value);
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      await createUserWithEmailAndPassword(auth, user.email, user.password);
+      await setDoc(doc(db, "users", auth.user.uid), {
+        name: user.name,
+        email: user.email,
+        tel: Number(user.tel),
+        role: "user",
+      });
+      setUser({
+        name: "",
+        email: "",
+        tel: "",
+        password: "",
+      });
+      setIsLoading(false);
+      setErrorMessage("");
+      navigate("/login");
+    } catch (error) {
+      setErrorMessage(error.message);
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <>
       <div className="container-signup">
         <main className="main-signup">
           <div className="signup-bg">
@@ -25,7 +66,7 @@ const SignupForm = () => {
                       type="text"
                       name="name"
                       required
-                    //   value={user.name}
+                      value={user.name}
                       placeholder="Name"
                       onChange={handleChange}
                     />
@@ -38,7 +79,7 @@ const SignupForm = () => {
                       type="email"
                       name="email"
                       required
-                    //   value={user.email}
+                      value={user.email}
                       className="email-id"
                       placeholder="Email"
                       onChange={handleChange}
@@ -53,7 +94,7 @@ const SignupForm = () => {
                       type="tel"
                       name="tel"
                       required
-                    //   value={user.tel}
+                      value={user.tel}
                       placeholder="Phone"
                       onChange={handleChange}
                     />
@@ -65,7 +106,7 @@ const SignupForm = () => {
                       type="password"
                       name="password"
                       required
-                    //   value={user.password}
+                      value={user.password}
                       placeholder="password"
                       onChange={handleChange}
                     />
@@ -75,6 +116,9 @@ const SignupForm = () => {
 
               <div className="flex flex-col items-center gap-y-1">
                 <div className="login-or actions ">
+                  <button type="submit" className="h3-login butt">
+                    CREATE ACCOUNT
+                  </button>
                   {/* {!isLoading && (
                     <button type="submit" className="h3-login butt">
                       CREATE ACCOUNT
@@ -104,7 +148,7 @@ const SignupForm = () => {
         </main>
       </div>
     </>
-    );
+  );
 };
 
 export default SignupForm;
